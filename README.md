@@ -31,7 +31,7 @@ Our app **MUST**:
 - [ ]  **Consume our own API** by making a front-end with HTML, Javascript, and jQuery
 - [ ]  **Use authentication in our API** to restrict access to appropriate users.
 - [ ]  **Craft thoughtful user stories together**, as a team.
-- **Manage team contributions and collaboration** using a standard Git flow on Github.
+- [ ] **Manage team contributions and collaboration** using a standard Git flow on Github.
 - [ ]  Layout and style our front-end with **clean and well-formatted CSS**.
 - [ ]  **Deploy our application online** so it's publicly accessible.
 
@@ -48,11 +48,10 @@ Our app **MUST**:
         - [ ] A short description of our application.
         - [ ] A brief explanation of the **technologies** (Node modules, Express
             middleware etc) used.
-        - [ ]  A couple of paragraphs detailing the **general approach you took**.
-        - [ ] Notes on any **unsolved problems** or **major hurdles** our team had to
-            overcome.
+        - [ ] A couple of paragraphs detailing the **general approach you took**.
+        - [ ] Notes on any **unsolved problems** or **major hurdles** our team had to overcome.
         - [ ] **Installation instructions** for any dependencies.
-        -   A link to our **user stories** – who are our users, what do they want,
+        - [ ] A link to our **user stories** – who are our users, what do they want,
             and why?
         - [ ]  A link to our **ERD** - what data models does our app use?
         - [ ] A link to our **wireframes** – sketches of major views / interfaces in
@@ -60,9 +59,9 @@ Our app **MUST**:
         - [ ] A link to the deployed front-end app.
         - [ ] A link to the repo for our back-end.
 
-    - The `README.md` file inside our _**back-end**_ repo should have:**back-end**_
+    - The `README.md` file inside our _**back-end**_ repo should have:
 
       - [ ] A short description of our application.
-   - [ ] A **catalog of routes (paths and methods)** that the API expects.
-   - [ ] A link to the deployed back-end app.
-   - [ ] A link to the repo for our front-end.
+      - [ ] A **catalog of routes (paths and methods)** that the API expects.
+      - [ ] A link to the deployed back-end app
+      - [ ] A link to the repo for our front-end.
