@@ -39,7 +39,7 @@ let signIn = function(e) {
 let changePassword = function(e) {
   e.preventDefault();
   if (!myApp.user) {
-    throw('No user signed in');
+    throw ('No user signed in');
   }
   let formData = new FormData(e.target);
   $.ajax({
@@ -58,8 +58,27 @@ let changePassword = function(e) {
   });
 };
 
+let signOut = function(e) {
+  e.preventDefault();
+  if (!myApp.user) {
+    throw('No user signed in');
+  }
+  $.ajax({
+    url: myApp.BASE_URL + '/sign-out/' + myApp.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+  }).done(function() {
+    console.log('You have logged out');
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 };
