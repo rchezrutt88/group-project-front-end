@@ -13,3 +13,6 @@
   - Used to manage the webpage with buttons and stuff.
   - CDA: content delivery app
   - non-technical users can manipulate content on page.
+
+## Collections
+  - 
