@@ -15,6 +15,6 @@ const userActions = require('./user-actions.js');
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
   $('#sign-in').on('submit', userActions.signIn);
-  $('#sign-out').on('submit', userActions.signOut);
+  $('#sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
 });
