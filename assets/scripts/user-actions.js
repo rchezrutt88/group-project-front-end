@@ -16,6 +16,7 @@ let signUp = function(e) {
   }).done(function(data) {
     console.log(data);
     signIn(e);
+    $('#sign-up-modal').model('hide');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -32,6 +33,7 @@ let signIn = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    $('#sign-in-modal').modal('hide');
     myApp.user = data.user;
   }).fail(function(jqxhr) {
     console.error(jqxhr);
@@ -55,6 +57,7 @@ let changePassword = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+   $('#change-password-modal').modal('hide');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
