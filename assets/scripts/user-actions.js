@@ -31,6 +31,7 @@ let signIn = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    myApp.user = data.user;
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -43,7 +44,7 @@ let changePassword = function(e) {
   }
   let formData = new FormData(e.target);
   $.ajax({
-    url: myApp.BASE_URL + '/change-password/' + myApp.user.id,
+    url: myApp.BASE_URL + '/change-password/' + myApp.user._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + myApp.user.token,
@@ -64,7 +65,7 @@ let signOut = function(e) {
     throw('No user signed in');
   }
   $.ajax({
-    url: myApp.BASE_URL + '/sign-out/' + myApp.user.id,
+    url: myApp.BASE_URL + '/sign-out/' + myApp.user._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + myApp.user.token,
