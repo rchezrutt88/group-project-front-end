@@ -1,2 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.marketing, .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
