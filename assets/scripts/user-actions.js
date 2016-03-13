@@ -15,6 +15,7 @@ let signUp = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    signIn(e);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -72,6 +73,7 @@ let signOut = function(e) {
     },
   }).done(function() {
     console.log('You have logged out');
+    myApp.user = undefined;
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
