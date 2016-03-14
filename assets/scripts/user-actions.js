@@ -31,6 +31,7 @@ let signIn = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    myApp.user = data.user;
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -80,5 +81,6 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  myApp
 };
