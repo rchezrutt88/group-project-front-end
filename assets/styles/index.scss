@@ -1,42 +1,62 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.carousel {
-    height: 300px;
-    margin-bottom: 60px;
+.left {
+  background-color: white;
+  position: fixed; // keep fixed to window
+  padding: 10px;
+  top: 0;
+  left: 0; // position to top left of window
+  height: 100%;
+  width: 100px; //set dimensions
+  background: darkslategray;
+  border-right: 2px solid black;
+  transition: width ease 0.5s; // fluid transition when resizing
 }
-.carousel {
-    position: relative;
+body {
+  background: white;
 }
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-@media (min-width: 1200px){
-  .container {
-      width: 1170px;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 25px;
   }
 }
-
-@media (min-width: 992px){
-  .container {
-      width: 970px;
+a {
+  color: shade(darkslategray, 50%);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color ease 0.35s, border-bottom-color ease 0.35s;
+  &:hover {
+    color: white;
+    border-bottom-color: white;
+  }
+  &.open {
+    font-size: 1.75rem;
+    font-weight: 700;
+    border: 0;
   }
 }
-@media (min-width: 768px){
-  .container {
-      width: 750px;
-  }
+.material-icons {
+  margin-left: 15px;
+  color: white;
 }
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.material-icons:hover {
+  cursor: pointer;
+  color: rgb(0, 240, 0);
 }
-
-.website-title {
+.profile-pic {
+  width: 75px;
+  height: 75px;
+  background-color: black;
+  border: 1px solid white;
+  margin-top: 5px;
+}
+.username {
+  margin-top: 10px;
+  margin-bottom: 40px;
   text-align: center;
+  color: white;
 }
