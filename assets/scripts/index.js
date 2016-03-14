@@ -11,6 +11,7 @@ const myApp = {
 };
 
 const userActions = require('./user-actions.js');
+const entry = require('./entry-actions.js');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
@@ -18,4 +19,5 @@ $(document).ready(() => {
   $('#sign-out').on('submit', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
   $('#sidebar').hide();
+  $('#blog-entry').on('submit', entry.createEntry);
 });
