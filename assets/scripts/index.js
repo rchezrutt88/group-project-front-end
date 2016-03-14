@@ -17,4 +17,5 @@ $(document).ready(() => {
   $('#sign-in').on('submit', userActions.signIn);
   $('#sign-out').on('submit', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
+  $('#sidebar').hide();
 });

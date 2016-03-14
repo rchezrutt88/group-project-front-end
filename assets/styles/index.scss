@@ -40,3 +40,45 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .website-title {
   text-align: center;
 }
+
+#sidebar {
+  background-color: white;
+  position: fixed; // keep fixed to window
+  padding: 10px;
+  top: 0;
+  left: 0; // position to top left of window
+  height: 100%;
+  width: 100px; //set dimensions
+  background: darkslategray;
+  border-right: 2px solid black;
+  transition: width ease 0.5s; // fluid transition when resizing
+}
+#sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  .sidebar-items {
+    margin-bottom: 25px;
+  }
+}
+.material-icons {
+  margin-left: 15px;
+  color: white;
+}
+.material-icons:hover {
+  cursor: pointer;
+  color: rgb(0, 240, 0);
+}
+.profile-pic {
+  width: 75px;
+  height: 75px;
+  background-color: black;
+  border: 1px solid white;
+  margin-top: 5px;
+}
+.username {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: white;
+}
