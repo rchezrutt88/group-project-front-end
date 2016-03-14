@@ -41,7 +41,10 @@ let signIn = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    $('#sign-in-modal').modal('hide');
     page2Handler();
+    console.log(data.user);
+    myApp.user = data.user;
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -75,7 +78,7 @@ let signOut = function(e) {
     throw('No user signed in');
   }
   $.ajax({
-    url: myApp.BASE_URL + '/sign-out/' + myApp.user.id,
+    url: myApp.BASE_URL + '/sign-out/' + myApp.user._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + myApp.user.token,

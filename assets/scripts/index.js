@@ -18,5 +18,5 @@ $(document).ready(() => {
   $('#sign-out').on('submit', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
-  $('#page1').hide();
+  $('#page2').hide();
 });
