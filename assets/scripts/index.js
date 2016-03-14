@@ -11,6 +11,7 @@ const myApp = {
 };
 
 const userActions = require('./user-actions.js');
+const page = require('./page-actions.js');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
