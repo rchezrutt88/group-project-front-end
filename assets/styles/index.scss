@@ -82,3 +82,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
   color: white;
 }
+.pages-container {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+.user-pages {
+  border: 2px solid black;
+  display: inline-block;
+  margin: 2px 2px 2px 2px;
+}
