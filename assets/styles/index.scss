@@ -1,23 +1,35 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-h1 {
-  margin: 15px;
-  text-align: center;
-}
-
 .carousel {
-  height: 300px;
-  margin: auto;
-  width: 80%;
+    height: 300px;
+    margin-bottom: 60px;
+}
+.carousel {
+    position: relative;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.item {
-  background: #808080;
-  height: 300px;
-  width: 100%;
+@media (min-width: 1200px){
+  .container {
+      width: 1170px;
+  }
 }
 
+@media (min-width: 992px){
+  .container {
+      width: 970px;
+  }
+}
+@media (min-width: 768px){
+  .container {
+      width: 750px;
+  }
+}
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -25,11 +37,6 @@ h1 {
     margin-left: auto;
 }
 
-img {
-  vertical-align: middle;
-}
-
-.marketing, .col-lg-4 {
-    margin-bottom: 20px;
-    text-align: center;
+.website-title {
+  text-align: center;
 }
