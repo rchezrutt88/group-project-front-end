@@ -4,6 +4,16 @@ const myApp = {
   BASE_URL: 'http://localhost:3000',
 };
 
+let page2Handler = function () {
+  $('#page2').show();
+  $('#page1').hide();
+};
+
+let page1Handler = function () {
+  $('#page1').show();
+  $('#page2').hide();
+};
+
 let signUp = function(e) {
   e.preventDefault();
   let formData = new FormData(e.target);
@@ -31,6 +41,7 @@ let signIn = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    page2Handler();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -71,6 +82,7 @@ let signOut = function(e) {
     },
   }).done(function() {
     console.log('You have logged out');
+    page1Handler();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
