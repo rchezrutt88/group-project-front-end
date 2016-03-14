@@ -3,7 +3,6 @@
 const myApp = require('./user-actions.js').myApp;
 
 let pageCreate = function(e) {
-  debugger;
   e.preventDefault();
   // console.log(e);
   let formData = new FormData(e.target);
