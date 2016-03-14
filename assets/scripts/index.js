@@ -21,4 +21,6 @@ $(document).ready(() => {
   $('#create-page-modal').on('submit', page.pageCreate);
   $('#entry-view').on('submit', entryActions.createEntry);
   $('#page2').hide();
+  $('#sidebar').hide();
+  $('#blog-entry').on('submit', entryActions.createEntry);
 });
