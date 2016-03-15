@@ -2,28 +2,6 @@
 
 const myApp = require('./my-app');
 
-
-let pageCreate = function(e) {
-  e.preventDefault();
-  // console.log(e);
-  let formData = new FormData(e.target);
-  $.ajax({
-    headers: {
-      Authorization: 'Token token=' + myApp.user.token,
-    },
-    url: myApp.BASE_URL + '/pages',
-    method: 'POST',
-    contentType: false,
-    processData: false,
-    data: formData,
-  }).done(function(data) {
-    console.log(data);
-    $('#create-page-modal').modal('hide');
-  }).fail(function(jqxhr) {
-    console.error(jqxhr);
-  });
-};
-
 let displayPages = function(response) {
   let pages = response.pages;
   let pagesTemplate = require('../handlebars/directory-pages.handlebars');
@@ -43,6 +21,28 @@ let pageIndex = function () {
   });
 };
 
+let pageCreate = function(e) {
+  e.preventDefault();
+  // console.log(e);
+  let formData = new FormData(e.target);
+  $.ajax({
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+    url: myApp.BASE_URL + '/pages',
+    method: 'POST',
+    contentType: false,
+    processData: false,
+    data: formData,
+  }).done(function(data) {
+    console.log(data);
+    $('#create-page-modal').modal('hide');
+    pageIndex();
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 let pageShow = function(e) {
   e.preventDefault();
   $.ajax({
@@ -59,9 +59,27 @@ let pageShow = function(e) {
   });
 };
 
+//DELETE BUTTON
+let deletePage = function (event) {
+  event.preventDefault();
+  $.ajax({
+    url: myApp.BASE_URL + '/pages/' + $(event.target).attr("data-delete-page"),
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+  }).done(function() {
+    console.log("Successfully deleted page.");
+    pageIndex();
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 
 module.exports = {
   pageCreate,
+  deletePage,
   pageIndex,
   pageShow,
 };
