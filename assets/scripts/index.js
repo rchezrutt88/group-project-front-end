@@ -23,7 +23,7 @@ $(document).ready(() => {
   $('#change-password').on('submit', userActions.changePassword);
   $('#create-page-modal').on('submit', page.pageCreate);
   $('#entry-view').on('submit', entryActions.createEntry);
-  $('#page2').hide();
   $('#blog-entry').on('submit', entryActions.createEntry);
-  $('.pages-collection').on('click', '.show-page', page.pageShow);
+  $('.pages-collection').on('click', 'user-pages', page.pageShow);
+  $('#page2').hide();
 });
