@@ -41,6 +41,8 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
+          <!-- Button trigger sign in modal -->
+          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
           <!-- Modal -->
           <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
             <div class="modal-dialog" role="document">
@@ -50,7 +52,7 @@
                   <h4 class="modal-title" id="exampleModalLabel">Sign Up Here!</h4>
                 </div>
                 <div class="modal-body">
-                  <form id='create-page'>
+                  <form id='sign-up'>
                     <div class="form-group">
                       <label for="emailInput">Username</label>
                       <input type="text" name="credentials[email]" class="form-control" id="emailInput" placeholder="Username">
