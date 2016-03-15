@@ -96,4 +96,8 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+<<<<<<< 85477dbd8a79e3acd1e6f60c38c2b5549604f44a
+=======
+  myApp,
+>>>>>>> Show and index function for pages
 };

@@ -14,7 +14,10 @@ const page = require('./page-actions.js');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
-  $('#sign-in').on('submit', userActions.signIn);
+  $('#sign-in').on('submit', function(e) {
+    userActions.signIn(e);
+    page.pageIndex();
+  });
   $('#sign-out').on('submit', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
@@ -22,4 +25,5 @@ $(document).ready(() => {
   $('#entry-view').on('submit', entryActions.createEntry);
   $('#page2').hide();
   $('#blog-entry').on('submit', entryActions.createEntry);
+  $('.pages-collection').on('click', '.show-page', page.pageShow);
 });
