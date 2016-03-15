@@ -18,7 +18,7 @@ $(document).ready(() => {
     userActions.signIn(e);
     page.pageIndex();
   });
-  $('#sign-out').on('submit', userActions.signOut);
+  $('#sign-out-button').on('click', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
   $('#create-page-modal').on('submit', page.pageCreate);
