@@ -57,7 +57,7 @@ let changePassword = function(e) {
   }
   let formData = new FormData(e.target);
   $.ajax({
-    url: myApp.BASE_URL + '/change-password/' + myApp.user.id,
+    url: myApp.BASE_URL + '/change-password/' + myApp.user._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + myApp.user.token,

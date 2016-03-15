@@ -36,6 +36,7 @@ let createEntry = function(e) {
       Authorization: 'Token token=' + myApp.user.token,
     },
     data: {
+      '_pageId': myApp.page._id,
       'body': body,
     },
   }).done(function(data) {
