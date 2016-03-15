@@ -169,13 +169,6 @@
     <h1 class="website-title">My Beaver's Sand Puppy</h1>
 
 
-    <!-- FIXME START TINYMCE TEXT FIELD FIXME-->
-    <form class="form" id='entry-view'>
-      <textarea></textarea>
-      <button type="submit" class="btn btn-primary">Create dat entry</button>
-    </form>
-    <!-- FIXME END TINYMCE TEXT FIELD FIXME-->
-
     <!-- START CAROUSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -306,6 +299,43 @@
     </div>
   </div>
   <!-- END VIEW PAGES PAGE -->
+
+  <!-- START VIEW ENTRIES PAGE-->
+  <div id="page3">
+
+    <!-- START SIDEBAR -->
+    <div id="sidebar">
+      <div class="profile-pic"></div>
+      <div class="username">Username</div>
+      <ul id="sidebar-list">
+        <li class="sidebar-items"><i id="create-entry" class="material-icons" data-toggle="modal" data-target="#text-editor-modal" style="font-size:40px;text-shadow:2px 2px 4px #000000;">control_point</i></li>
+      </ul>
+    </div>
+    <!-- END SIDEBAR -->
+
+    <div class="modal fade" id="text-editor-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body" id="editor">
+    <div id="text-editor"> <form class="form" id='entry-view'>
+      <textarea></textarea>
+      <button type="submit" class="btn btn-primary">Create dat entry</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+    <div id="page-title">
+    </div>
+
+  </div>
+
+
 
 
 </body>
