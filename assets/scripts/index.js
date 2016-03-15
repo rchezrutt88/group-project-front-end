@@ -11,6 +11,7 @@ const myApp = {
 };
 
 const userActions = require('./user-actions.js');
+const page = require('./page-actions.js');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
@@ -18,5 +19,6 @@ $(document).ready(() => {
   $('#sign-out').on('submit', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
+  $('#create-page-modal').on('submit', page.pageCreate);
   $('#page2').hide();
 });
