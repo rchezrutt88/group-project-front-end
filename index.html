@@ -15,10 +15,24 @@
 <body class="container-fluid">
   <div id="page1">
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container-fluid navbar-right">
         <div class="navbar-header">
+
           <!-- Button trigger sign in modal -->
-          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+          <button type="button" id="sign-in-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+          <!-- Button trigger sign in modal -->
+          <button type="button" id="sign-in-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+          <!-- Change Password -->
+          <button type="button" id="change-password-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+          <!-- Sign out Button -->
+          <button type="button" id='sign-out-button' class="btn btn-default navbar-btn">Sign out</button>
+
+
+
+
+
+
+
           <!-- Modal -->
           <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
             <div class="modal-dialog" role="document">
@@ -49,8 +63,7 @@
 
 
 
-          <!-- Button trigger sign in modal -->
-          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+
           <!--         Sign In Modal         -->
           <!-- Modal -->
           <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
@@ -81,14 +94,6 @@
           </div>
 
 
-
-          <!-- Sign out Button -->
-          <button type="button" id='sign-out' class="btn btn-default navbar-btn">Sign out</button>
-
-
-
-          <!-- Change Password -->
-          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
 
           <!-- Modal -->
           <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
