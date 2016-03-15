@@ -1,15 +1,9 @@
 'use strict'
 
-const myApp = require('.my-app');
+const myApp = require('./my-app');
 
 tinymce.init({
 selector: 'textarea',
-//   setup: function (editor) {
-//         editor.on('change', function () {
-//             editor.save();
-//         });
-//     }
-// });
 height: 500,
 theme: 'modern',
 plugins: [
@@ -31,10 +25,10 @@ content_css: [
 ]
 });
 
-
 let createEntry = function(e) {
   e.preventDefault();
   let body = tinyMCE.activeEditor.getContent();
+  console.log(body);
   $.ajax({
     url: myApp.BASE_URL + '/entries',
     method: 'POST',
