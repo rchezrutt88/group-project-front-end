@@ -7,13 +7,152 @@
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+  </script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
+    <defs>
+      <style type="text/css"></style>
+    </defs>
+    <text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
+  </svg>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
+<!-- MODALS -->
+
+<!-- START SIGN-UP MODAL -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Sign Up Here!</h4>
+      </div>
+      <div class="modal-body">
+        <form id='sign-up'>
+          <div class="form-group">
+            <label for="emailInput">Username</label>
+            <input type="text" name="credentials[email]" class="form-control" id="emailInput" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="regPass">Password</label>
+            <input type="password" name="credentials[password]" class="form-control" id="regPass" placeholder="Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign Up!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END SIGN-UP MODAL -->
+
+<!-- START SIGN-IN MODAL -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Sign In!</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form" id='sign-in'>
+          <div class="form-group">
+            <label class="sr-only" for="emailInput">Username</label>
+            <input type="text" name="credentials[email]" class="form-control" id="emailInput" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="regPass">Password</label>
+            <input type="password" name="credentials[password]" class="form-control" id="regPass" placeholder="Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary sign-btns">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END SIGN-IN MODAL -->
+
+<!-- START CHANGE PASSWORD MODAL -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline" id='change-password'>
+          <div class="form-group">
+            <label class="sr-only" for="oldPass">Old Password</label>
+            <input type="password" name="passwords[old]" class="form-control" id="oldPass" placeholder="New Password">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="newPass">New Password</label>
+            <input type="password" name="passwords[new]" class="form-control" id="newPass" placeholder="Old Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary sign-btns">Change Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CHANGE PASSWORD MODAL -->
+
+<!-- START CREATE PAGE MODAL -->
+<div class="modal fade" id="create-page-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Page Title</h4>
+      </div>
+
+      <form id='create-page'>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="blog">Make it happen!</label>
+            <input type="text" name="title" class="form-control" id="createPage" placeholder="What you gonna call it?">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Let's do this!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END CREATE PAGE MODAL -->
+
+<!-- START BODY  -->
+
+
 <body class="container-fluid">
+
+
+
+  <!-- START WELCOME PAGE -->
   <div id="page1">
+
+    <!-- START NAVBAR -->
     <nav class="navbar navbar-default">
       <div class="container-fluid navbar-left">
         <div class="navbar-header">
@@ -22,116 +161,22 @@
           <button type="button" id="sign-in-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
           <!-- Button trigger sign in modal -->
           <button type="button" id="sign-in-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-
-
-
-
-
-
-          <!-- Modal -->
-          <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="exampleModalLabel">Sign Up Here!</h4>
-                </div>
-                <div class="modal-body">
-                  <form id='sign-up'>
-                    <div class="form-group">
-                      <label for="emailInput">Username</label>
-                      <input type="text" name="credentials[email]" class="form-control" id="emailInput" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                      <label for="regPass">Password</label>
-                      <input type="password" name="credentials[password]" class="form-control" id="regPass" placeholder="Password">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Sign Up!</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <!--         Sign In Modal         -->
-          <!-- Modal -->
-          <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="exampleModalLabel">Sign In!</h4>
-                </div>
-                <div class="modal-body">
-                  <form class="form" id='sign-in'>
-                    <div class="form-group">
-                      <label class="sr-only" for="emailInput">Username</label>
-                      <input type="text" name="credentials[email]" class="form-control" id="emailInput" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="regPass">Password</label>
-                      <input type="password" name="credentials[password]" class="form-control" id="regPass" placeholder="Password">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary sign-btns">Sign In</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- Modal -->
-          <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                  <form class="form-inline" id='change-password'>
-                    <div class="form-group">
-                      <label class="sr-only" for="oldPass">Old Password</label>
-                      <input type="password" name="passwords[old]" class="form-control" id="oldPass" placeholder="New Password">
-                    </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="newPass">New Password</label>
-                      <input type="password" name="passwords[new]" class="form-control" id="newPass" placeholder="Old Password">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary sign-btns">Change Password</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </nav>
-    <!-- NAVBAR ENDS -->
+    <!-- END NAVBAR -->
 
     <h1 class="website-title">My Beaver's Sand Puppy</h1>
 
+
+    <!-- FIXME START TINYMCE TEXT FIELD FIXME-->
     <form class="form" id='entry-view'>
       <textarea></textarea>
       <button type="submit" class="btn btn-primary">Create dat entry</button>
     </form>
+    <!-- FIXME END TINYMCE TEXT FIELD FIXME-->
 
-
-    <!-- Carousel Start -->
-
+    <!-- START CAROUSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -181,12 +226,9 @@
       </a>
     </div>
 
-    <!-- Carousel End -->
+    <!-- END CAROUSEL -->
 
-    <!-- Marketing messaging and featurettes
-  ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
+    <!-- PANELS START -->
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
@@ -212,63 +254,43 @@
       </div>
       <!-- /.row -->
     </div>
+    <!-- PANELS END -->
+
     <!-- FOOTER -->
     <footer>
       <p class="pull-right"><a href="#">Back to top</a></p>
       <p>Built by Jeremiah Damiron, Jason Liang, Kevin Pie, and Robert Ruttenberger</p>
     </footer>
   </div>
+  <!-- END WELCOME PAGE -->
+
+
+
+  <!-- START VIEW PAGES PAGE -->
   <div id="page2">
 
-
+    <!-- START TOP NAVBAR -->
     <nav class="navbar navbar-default">
       <div class="container-fluid navbar-right">
         <div class="navbar-header">
-
           <!-- Change Password -->
           <button type="button" id="change-password-button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
           <!-- Sign out Button -->
           <button type="button" id='sign-out-button' class="btn btn-default navbar-btn">Sign out</button>
         </div>
       </div>
+    </nav>
+    <!-- END TOP NAVBAR -->
 
-
-      <div id="sidebar">
-        <div class="profile-pic"></div>
-        <div class="username">Username</div>
-        <ul id="sidebar-list">
-          <li class="sidebar-items"><i class="material-icons create-page" data-toggle="modal" data-target="#create-page-modal" style="font-size:40px;text-shadow:2px 2px 4px #000000;">control_point</i></li>
-        </ul>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="create-page-modal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-
-
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="exampleModalLabel">Page Title</h4>
-            </div>
-
-            <form id='create-page'>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="blog">Make it happen!</label>
-                  <input type="text" name="title" class="form-control" id="createPage" placeholder="What you gonna call it?">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Let's do this!</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    <!-- START SIDEBAR -->
+    <div id="sidebar">
+      <div class="profile-pic"></div>
+      <div class="username">Username</div>
+      <ul id="sidebar-list">
+        <li class="sidebar-items"><i class="material-icons create-page" data-toggle="modal" data-target="#create-page-modal" style="font-size:40px;text-shadow:2px 2px 4px #000000;">control_point</i></li>
+      </ul>
     </div>
-    <!-- /.navbar -->
+    <!-- END SIDEBAR -->
 
     <div class="pages-container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -301,34 +323,15 @@
             <!--/row-->
           </div>
           <!--/.col-xs-12.col-sm-9-->
-
           <!--/.sidebar-offcanvas-->
         </div>
         <!--/row-->
       </div>
-      <!--/.container-->
-      <!-- /.container -->
-
-
-      <!-- Bootstrap core JavaScript
-    ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-      </script>
-      <script src="../../dist/js/bootstrap.min.js"></script>
-      <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-      <script src="../../assets/js/vendor/holder.min.js"></script>
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-      <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">
-        <defs>
-          <style type="text/css"></style>
-        </defs>
-        <text x="0" y="25" style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif">500x500</text>
-      </svg>
+    </div>
   </div>
+  <!-- END VIEW PAGES PAGE -->
+
+
 </body>
 
 </html>
