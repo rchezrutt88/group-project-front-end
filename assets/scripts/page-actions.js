@@ -17,6 +17,7 @@ let pageCreate = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    $('#create-page-modal').modal('hide');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
