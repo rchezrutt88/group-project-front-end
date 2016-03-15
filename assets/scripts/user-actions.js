@@ -1,8 +1,6 @@
 'use strict';
 
-const myApp = {
-  BASE_URL: 'http://localhost:3000',
-};
+const myApp = require('./my-app')
 
 let page2Handler = function () {
   $('#page2').show();
@@ -96,5 +94,4 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  myApp
 };

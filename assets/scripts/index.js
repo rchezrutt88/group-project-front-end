@@ -6,9 +6,7 @@
 // use require without a reference to ensure a file is bundled
 require('./example');
 
-const myApp = {
-  BASE_URL: 'https://localhost:3000/',
-};
+const myApp = require('./my-app')
 
 const userActions = require('./user-actions.js');
 const page = require('./page-actions.js');
