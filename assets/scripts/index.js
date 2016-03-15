@@ -25,5 +25,6 @@ $(document).ready(() => {
   $('#entry-view').on('submit', entryActions.createEntry);
   $('#blog-entry').on('submit', entryActions.createEntry);
   $('.pages-collection').on('click', '.user-pages', page.pageShow);
+  $('.pages-collection').on('click', '.close-page-button', page.deletePage);
   $('#page2').hide();
 });
