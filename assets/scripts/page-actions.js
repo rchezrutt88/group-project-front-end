@@ -53,6 +53,7 @@ let pageShow = function(e) {
     method: 'GET',
     dataType: 'json',
   }).done(function(page){
+    myApp.page = page;
     console.log(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
