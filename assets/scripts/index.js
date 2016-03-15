@@ -24,6 +24,6 @@ $(document).ready(() => {
   $('#create-page-modal').on('submit', page.pageCreate);
   $('#entry-view').on('submit', entryActions.createEntry);
   $('#blog-entry').on('submit', entryActions.createEntry);
-  $('.pages-collection').on('click', 'user-pages', page.pageShow);
+  $('.pages-collection').on('click', '.user-pages', page.pageShow);
   $('#page2').hide();
 });
