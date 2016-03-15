@@ -1,6 +1,6 @@
 'use strict';
 
-const myApp = require('./user-actions.js').myApp;
+const myApp = require('./my-app')
 
 let pageCreate = function(e) {
   e.preventDefault();
