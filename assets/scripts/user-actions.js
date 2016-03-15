@@ -41,6 +41,8 @@ let signIn = function(e) {
     console.log(data);
     $('#sign-in-modal').modal('hide');
     page2Handler();
+    $('#sign-out-button').show();
+    $('#change-password-button').show();
     console.log(data.user);
     myApp.user = data.user;
   }).fail(function(jqxhr) {
