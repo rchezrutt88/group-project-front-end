@@ -27,4 +27,9 @@ $(document).ready(() => {
   $('.pages-collection').on('click', '.user-pages', page.pageShow);
   $('.pages-collection').on('click', '.close-page-button', page.deletePage);
   $('#page2').hide();
+  $('#page3').hide();
+  $('#create-entry').on('click', function(e) {
+    e.preventDefault();
+    $('#text-editor').show();
+  });
 });

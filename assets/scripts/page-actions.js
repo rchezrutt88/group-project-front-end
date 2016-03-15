@@ -2,6 +2,12 @@
 
 const myApp = require('./my-app');
 
+let page3Handler = function () {
+  $('#page3').show();
+  $('#page2').hide();
+  $('#text-editor').hide();
+};
+
 let displayPages = function(response) {
   let pages = response.pages;
   let pagesTemplate = require('../handlebars/directory-pages.handlebars');
@@ -20,6 +26,8 @@ let pageIndex = function () {
     console.log(jqxhr);
   });
 };
+
+
 
 let pageCreate = function(e) {
   e.preventDefault();
@@ -54,6 +62,7 @@ let pageShow = function(e) {
     dataType: 'json',
   }).done(function(page){
     myApp.page = page;
+    page3Handler();
     console.log(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
