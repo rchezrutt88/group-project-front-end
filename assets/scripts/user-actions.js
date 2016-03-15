@@ -96,4 +96,5 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+  myApp,
 };
