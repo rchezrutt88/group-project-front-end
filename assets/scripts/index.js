@@ -14,9 +14,11 @@ const page = require('./page-actions.js');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', userActions.signUp);
+
+  //TODO refactor to use promise?
   $('#sign-in').on('submit', function(e) {
-    userActions.signIn(e);
-    page.pageIndex();
+    userActions.signIn(e, page.pageUserIndex);
+    // page.pageUserIndex();
   });
   $('#sign-out-button').on('click', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
