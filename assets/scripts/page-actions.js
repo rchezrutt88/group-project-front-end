@@ -60,8 +60,7 @@ let pageCreate = function(e) {
 };
 
 let displayEntries = function(response) {
-  let entries = response.pages._entries;
-  entries.reverse();
+  let entries = formatEntries(response.pages._entries);
   let entryListing = require('../handlebars/show-entries.handlebars');
   $('.display-entries').empty();
   $('.display-entries').append(entryListing({
@@ -114,6 +113,16 @@ let deletePage = function (event) {
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
+};
+
+/* HELPER FUNCTIONS */
+let formatEntries = function (entries) {
+  entries.reverse();
+  entries.forEach(function(cV, i, a) {
+    let ISOdate = new Date(cV.createdAt);
+     cV.createdAt = ISOdate.toLocaleString();
+  })
+  return entries;
 };
 
 
