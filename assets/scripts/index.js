@@ -36,5 +36,11 @@ $(document).ready(() => {
     e.preventDefault();
     $('#text-editor').show();
   });
+  $('.display-entries').on('click', ".update-entry", function(e) {
+    console.log('here');
+    e.preventDefault();
+    $('#text-editor').show();
+    console.log('here');
+  });
   // $('#text-editor-modal').on('submit', entryActions.createEntry);
 });
