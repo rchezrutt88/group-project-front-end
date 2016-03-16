@@ -63,12 +63,24 @@ let pageCreate = function(e) {
     console.error(jqxhr);
   });
 };
+
+let displayHelper = function (array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++) {
+    newArray[i] = array[i].body;
+  }
+  return newArray;
+};
+
 let displayEntries = function(response) {
   console.log(response.pages._entries);
   console.log(displayHelper(response.pages._entries));
-  let entries = response.pages._entries;
+  let entries = (displayHelper(response.pages._entries));
   let entryListing = require('../handlebars/show-entries.handlebars');
-  $('.display-entries').html(entryListing({entries}));
+  $('.display-entries').empty();
+  $('.display-entries').prepend(entryListing({
+    entries
+  }));
 };
 
 let pageShow = function(e) {
@@ -90,16 +102,9 @@ let pageShow = function(e) {
   });
 };
 
-let displayHelper = function (array) {
-  let newArray = [];
-  for(let i = 0; i < array.length; i++) {
-    newArray[i] = array[i].body;
-  }
-  return newArray;
-};
-
 //DELETE BUTTON
 let deletePage = function (event) {
+  console.log($(event.target).attr("data-delete-page"));
   event.preventDefault();
   $.ajax({
     url: myApp.BASE_URL + '/pages/' + $(event.target).attr("data-delete-page"),
