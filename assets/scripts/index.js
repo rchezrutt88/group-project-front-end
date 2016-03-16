@@ -30,16 +30,13 @@ $(document).ready(() => {
   $('#create-page-modal').on('submit', pageActions.pageCreate);
 
   //XXX why are there two listenrs here for createEntry?
-  $('#entry-view').on('submit', function(e) {
-    entryActions.createEntry(e, pageActions.pageShow);
-  });
-
-  $('#blog-entry').on('submit', function(e) {
-    entryActions.createEntry(e, pageActions.pageShow);
-  });
+  $('#entry-view').on('submit', entryActions.patchOrCreate);
 
   //clear editor on create-entry colorpicker
-  $('.create-entry').on('click', entryActions.clearActiveEditor);
+  $('.create-entry').on('click', function () {
+    entryActions.clearActiveEditor();
+    $(".patching-button").attr("data-update-page", "");
+  });
 
   $('.pages-collection').on('click', '.show-page', pageActions.pageShow);
   $('.pages-collection').on('click', '.close-page-button', pageActions.deletePage);
@@ -63,5 +60,5 @@ $(document).ready(() => {
     entryActions.getUpdateId(e);
     $('#text-editor').show();
   });
-  $('#text-editor').on('click', '.patching-button', entryActions.patchOrCreate);
+  // $('#text-editor').on('click', '.patching-button', entryActions.patchOrCreate);
 });

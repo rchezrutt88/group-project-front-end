@@ -28,8 +28,7 @@ content_css: [
 ]
 });
 
-let createEntry = function(event, pageShow) {
-  event.preventDefault();
+let createEntry = function() {
   let body = tinyMCE.activeEditor.getContent();
   console.log(body);
   $.ajax({
@@ -43,7 +42,7 @@ let createEntry = function(event, pageShow) {
       'body': body,
     },
   }).done(function(data) {
-    pageShow();
+    page.pageShow();
     console.log(data);
     $('#text-editor').hide();
     $('#text-editor-modal').modal('hide');
@@ -104,7 +103,6 @@ let clearActiveEditor = function () {
   // };
 
   let updateEntry = function () {
-    debugger;
     let body = tinyMCE.activeEditor.getContent();
     $.ajax({
       url: myApp.BASE_URL + '/entries/' + $('.patching-button').attr("data-update-page"),
@@ -117,7 +115,6 @@ let clearActiveEditor = function () {
       },
     }).done(function() {
       console.log("Updated Entry");
-      $(".patching-button").attr("data-update-page", "");
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
@@ -127,7 +124,8 @@ let clearActiveEditor = function () {
     let id = $(event.target).attr("data-update-page");
     $(".patching-button").attr("data-update-page", id);
   };
-  let patchOrCreate = function (event) {
+  let patchOrCreate = function () {
+    debugger;
       if (!$(".patching-button").attr("data-update-page")) {
         createEntry();
       } else {
