@@ -28,6 +28,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
       width: 750px;
   }
 }
+
+@media (min-width: 1200px) {
+  .col-lg-4 {
+      width: 50%;
+  }
+}
+
 .container {
     padding-right: 15px;
     padding-left: 15px;

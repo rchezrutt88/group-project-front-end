@@ -100,7 +100,6 @@ let pageShow = function(e) {
 
 //DELETE BUTTON
 let deletePage = function (event) {
-  console.log($(event.target).attr("data-delete-page"));
   event.preventDefault();
   $.ajax({
     url: myApp.BASE_URL + '/pages/' + $(event.target).attr("data-delete-page"),
@@ -116,6 +115,22 @@ let deletePage = function (event) {
   });
 };
 
+//DELETE ENTRIES
+let deleteEntry = function (event) {
+  event.preventDefault();
+  $.ajax({
+    url: myApp.BASE_URL + '/entries/' + $(event.target).attr("entry-id"),
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+  }).done(function() {
+    console.log("Successfully deleted entry.");
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
 
 module.exports = {
   pageCreate,
@@ -123,4 +138,5 @@ module.exports = {
   pageIndex,
   pageUserIndex,
   pageShow,
+  deleteEntry,
 };
