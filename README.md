@@ -1,11 +1,66 @@
 # Content Management System (name TBD)
 
-## Prompt
-Build an app to build a website! our app must allow non-technical users to write blog posts **and** pages for the site. When a visitor visits our site, they should see content. When a user logs in, they should see a dashboard that lets them create and edit new posts or pages.
+## What Can Our Site Do For You
 
-**Reach Goal**: Implement authorization. Administrators should be able to delete pages or posts, while normal users should be able to edit pages. Only administrators can publish a new post, normal users can only save drafts.
+Our web application allows visitors with no technical background to build a
+website with ease. Visitors to our site will be able to sign up and create a
+profile to start building multiple blogs. Each user will have their own home
+page where their past blogs will display on a dashboard.  Our website generator
+also allows users to customize and style their entries with ease.
 
-## Roles:
+## Visitor Interface
+
+In our planning our team all agreed that we want our visitors to have a quality
+user experience. When visitors visit our site they are first greeted by a
+welcome page. The page has a friendly design with a carousel and information
+about the functionality at the bottom of the page. We also wanted users to feel
+like they own a space, so once they signed in the welcome screen transitions to
+a profile page.  The overall layout of the profile page is familar, it allows
+the user to have typical profile functions like changing passwords and signing
+out. At the center, past blogs are generated with the option of either deleting
+a page or viewing the blog they have created.
+
+When the user choose to view a blog they are transported to a third page where
+past blog entries are generated in an organized fashion. To further provide
+a good user experience we have incorporated the TinyMCE text editor which allows
+our user to have fun with their content. Our application is able to record a lot
+of what TinyMCE generates, including font colors, emoticons, and a few others.
+We also have a home button which takes the user back to the profile page. As a
+group we achieved our goal in having a fully functioning blog web application.
+
+## Technologies:
+
+The overall look of the application is formatted using bootstrap and the icons
+used on the sidebar are imported through Google Icons. The main engine for
+interaction is operated by using Javascript and Jquery functions. As a team we
+used node to modularize the javascript to practice clean and semantic coding.
+Our blog pages and entries are both generated on the page using handlebars. We
+also used a TinyMCE text editor on entry generator to give users an option to
+style the text.  Text from the editor or any other form data is sent to the
+backend using AJAX request.  The backend of our site is powered by an Express
+framework which uses CRUD actions to send data to our MongoDB database.
+
+## Challenges and Goals
+
+The most challenging problem we have dealt with storing and generating HTML.
+In the beginning we had no direction how we would go about doing this and once
+we got footing we ran into even more challenges. We want to make sure the html
+stored by the user is safe so we had to make a filter which is still a work in
+progress.  We also want our site to be very customizable so in the future we
+our reach goal is to have a profile picture and the ability to change the
+background color.
+
+## Wireframes
+
+![Wirefram](http://i.imgur.com/5mGunkC.jpg)
+
+## ERD
+![ERD](http://i.imgur.com/6SazDqy.jpg) 
+
+## Back End Repo
+[See Our Back End Here. It's WEB SCALE!©](https://github.com/Insert-Squad-Name/group-project-back-end)
+
+## Meet the Gentleman Who Created This Project:
 
 - **Project Lead/Product Lead: Kevin**
 
@@ -22,46 +77,3 @@ Build an app to build a website! our app must allow non-technical users to write
 - **Quality Assurance: Jeremiah**
 
   Accountable for code quality through frequent pair-programming and code review. Also accountable for proper use of Git (commit messages, branching/merging strategies) throughout the project. If your group only has three members, everyone is jointly and individually accountable for quality.
-
-## Technical Requirements
-Our app **MUST**:
-- [ ]   **Use Mongo and Express** to build an API.
-- [ ] **Create an API using at least 2 related models**, one of which should be a user.
-- [ ] Include **all major CRUD functions** in a **RESTful API** for at least one non-user model.
-- [ ]  **Consume our own API** by making a front-end with HTML, Javascript, and jQuery
-- [ ]  **Use authentication in our API** to restrict access to appropriate users.
-- [ ]  **Craft thoughtful user stories together**, as a team.
-- [ ] **Manage team contributions and collaboration** using a standard Git flow on Github.
-- [ ]  Layout and style our front-end with **clean and well-formatted CSS**.
-- [ ]  **Deploy our application online** so it's publicly accessible.
-
-## Necessary Deliverables
-- [ ]  A **working API, built by the whole team**, hosted somewhere on the
-    internet.
-- [ ]  A **client app that consumes our API, built be the whole team**,
- hosted somewhere on the internet.
-- [ ]  **At least two Git repositories** (front-end and back-end) **hosted on
-    Github**, with frequent commits from _every_ team member dating back to the
-    _very beginning_ of the project.
-    - The `README.md` file inside our   _**front-end**_ repo should have:
-
-        - [ ] A short description of our application.
-        - [ ] A brief explanation of the **technologies** (Node modules, Express
-            middleware etc) used.
-        - [ ] A couple of paragraphs detailing the **general approach you took**.
-        - [ ] Notes on any **unsolved problems** or **major hurdles** our team had to overcome.
-        - [ ] **Installation instructions** for any dependencies.
-        - [ ] A link to our **user stories** – who are our users, what do they want,
-            and why?
-        - [ ]  A link to our **ERD** - what data models does our app use?
-        - [ ] A link to our **wireframes** – sketches of major views / interfaces in
-            our application.
-        - [ ] A link to the deployed front-end app.
-        - [ ] A link to the repo for our back-end.
-
-    - The `README.md` file inside our _**back-end**_ repo should have:
-
-      - [ ] A short description of our application.
-      - [ ] A **catalog of routes (paths and methods)** that the API expects.
-      - [ ] A link to the deployed back-end app
-      - [ ] A link to the repo for our front-end.
