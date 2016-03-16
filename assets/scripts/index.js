@@ -32,4 +32,5 @@ $(document).ready(() => {
     e.preventDefault();
     $('#text-editor').show();
   });
+  // $('#text-editor-modal').on('submit', entryActions.createEntry);
 });

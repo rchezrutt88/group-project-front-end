@@ -2,6 +2,8 @@
 
 const myApp = require('./my-app');
 
+const page = require('./page-actions.js');
+
 tinymce.init({
 selector: 'textarea',
 height: 500,
@@ -37,11 +39,13 @@ let createEntry = function(e) {
       Authorization: 'Token token=' + myApp.user.token,
     },
     data: {
-      '_pageId': myApp.page._id,
+      '_pageId': myApp.page.pages._id,
       'body': body,
     },
   }).done(function(data) {
     console.log(data);
+    $('#text-editor').hide();
+    $('#text-editor-modal').modal('hide');
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
