@@ -1,16 +1,7 @@
 'use strict';
 
-const myApp = require('./my-app')
-
-let page2Handler = function () {
-  $('#page2').show();
-  $('#page1').hide();
-};
-
-let page1Handler = function () {
-  $('#page1').show();
-  $('#page2').hide();
-};
+const myApp = require('./my-app');
+const pageSwitch = require('./switch-pages');
 
 let signUp = function(e, signIn, populatePages) {
   e.preventDefault();
@@ -42,7 +33,7 @@ let signIn = function(e, populatePages) {
   }).done(function(data) {
     console.log(data);
     $('#sign-in-modal').modal('hide');
-    page2Handler();
+    pageSwitch.page2Handler();
     $('#sign-out-button').show();
     $('#change-password-button').show();
     console.log(data.user);
@@ -90,7 +81,7 @@ let signOut = function(e) {
     console.log('You have logged out');
     myApp.user = undefined;
     myApp.page = undefined;
-    page1Handler();
+    pageSwitch.page1Handler();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
