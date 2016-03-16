@@ -58,7 +58,7 @@ let pageCreate = function(e) {
   }).done(function(data) {
     console.log(data);
     $('#create-page-modal').modal('hide');
-    pageIndex();
+    pageUserIndex();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
