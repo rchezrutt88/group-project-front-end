@@ -30,7 +30,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .page-entries {
-    width: 100%;
+    width: 60em;
+    border-bottom: solid;
 }
 
 .container {
@@ -143,8 +144,9 @@ padding-bottom: 70px;
 }
 
 .entry-body {
-  margin-left: 250px;
+  margin-left: 125px;
   margin-right: 250px;
   margin-top: 10px;
   text-align: left;
+
 }
