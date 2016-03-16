@@ -56,7 +56,7 @@ background color.
 
 ## Wireframes
 
-![Wireframe](../wireframeJPG)
+![Wireframe](../wireframe.JPG)
 
 ## ERD
 
