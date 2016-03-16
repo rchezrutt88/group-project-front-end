@@ -37,6 +37,9 @@ $(document).ready(() => {
     entryActions.createEntry(e, pageActions.pageShow);
   });
 
+  //clear editor on create-entry colorpicker
+  $('.create-entry').on('click', entryActions.clearActiveEditor);
+
   $('.pages-collection').on('click', '.show-page', pageActions.pageShow);
   $('.pages-collection').on('click', '.close-page-button', pageActions.deletePage);
 
