@@ -1,9 +1,24 @@
 # Content Management System (name TBD)
 
-## Prompt
-Build an app to build a website! our app must allow non-technical users to write blog posts **and** pages for the site. When a visitor visits our site, they should see content. When a user logs in, they should see a dashboard that lets them create and edit new posts or pages.
+## What Can Our Site Do For You
+
+Our web application allows visitors with no technical background to build a
+website with ease. Visitors to our site will be able to sign up and create a
+profile to start building multiple blogs. Each user will have their own home
+page where their past blogs will display on a dashboard.  Our website generator
+also allows users to customize and style their entries with ease.
 
 **Reach Goal**: Implement authorization. Administrators should be able to delete pages or posts, while normal users should be able to edit pages. Only administrators can publish a new post, normal users can only save drafts.
+
+## Technologies:
+
+The overall look of the application formatted using bootstrap and the icons used
+on the sidebar are imported through Google Icons. The main engine for interaction is operated by using Javascript and Jquery functions. As a team we
+used node to modularize the javascript to practice clean and semantic coding.
+Our blog pages and entries are both generated on the page using handlebars. We
+also used a TinyMCE text editor on entry generator to give users an option to
+style the text.  From there the html data is stored onto a NOS 
+
 
 ## Roles:
 
