@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const myApp = require('./my-app');
 
@@ -103,9 +103,36 @@ let clearActiveEditor = function () {
   //   });
   // };
 
+  let updateEntry = function (event) {
+    event.preventDefault();
+    let body = tinyMCE.activeEditor.getContent();
+    $.ajax({
+      url: myApp.BASE_URL + '/entries/' + $(event.target).attr("data-update-page"),
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + myApp.user.token,
+      },
+      data: {
+        'body': body,
+      },
+    }).done(function() {
+      console.log("Updated Entry");
+    }).fail(function(jqxhr) {
+      console.error(jqxhr);
+    });
+  };
+
+  let getUpdateId = function (event) {
+    let id = $(event.target).attr("data-update-page");
+    $(".patching-button").attr("data-update-page", id);
+    debugger;
+  };
+
 module.exports = {
   createEntry,
   deleteEntry,
   clearActiveEditor,
   // showEntries
+  updateEntry,
+  getUpdateId,
 };
