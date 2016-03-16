@@ -44,8 +44,28 @@ let createEntry = function(e) {
     },
   }).done(function(data) {
     console.log(data);
-    $('#text-editor').hide();
+    $('.text-editor').hide();
     $('#text-editor-modal').modal('hide');
+  }).fail(function(jqxhr) {
+    console.error(jqxhr);
+  });
+};
+
+let updateEntry = function (event) {
+  event.preventDefault();
+  let body = tinyMCE.activeEditor.getContent();
+  $.ajax({
+    url: myApp.BASE_URL + '/entries',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + myApp.user.token,
+    },
+    data: {
+      '_pageId': myApp.page.pages._id,
+      'body': body,
+    },
+  }).done(function() {
+    console.log("Updated Entry");
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
