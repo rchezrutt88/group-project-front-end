@@ -63,13 +63,6 @@ let pageCreate = function(e) {
     console.error(jqxhr);
   });
 };
-let displayEntries = function(response) {
-  console.log(response.pages._entries);
-  console.log(displayHelper(response.pages._entries));
-  let entries = response.pages._entries;
-  let entryListing = require('../handlebars/show-entries.handlebars');
-  $('.display-entries').html(entryListing({entries}));
-};
 
 let displayHelper = function (array) {
   let newArray = [];
@@ -107,14 +100,6 @@ let pageShow = function(e) {
   }).fail(function(jqxhr) {
     console.log(jqxhr);
   });
-};
-
-let displayHelper = function (array) {
-  let newArray = [];
-  for(let i = 0; i < array.length; i++) {
-    newArray[i] = array[i].body;
-  }
-  return newArray;
 };
 
 //DELETE BUTTON
