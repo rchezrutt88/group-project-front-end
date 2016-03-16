@@ -43,6 +43,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .website-title {
   text-align: center;
+  padding-bottom: 100px;
+  font-family: 'Karla', sans-serif;
+  font-size: 300px;
+
 }
 
 .sidebar {
@@ -117,6 +121,8 @@ padding: 0;
 font-family: 'Karla', sans-serif;
 color: #7c7c7c;
 text-align: center;
+background-image: url('http://wallgallery.org/wp-content/uploads/2016/01/Grey-Abstract-high-definition-wallpapers.jpg');
+background-size: 100%;
 // background: transparent no-repeat center top;
 // /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f5f6+0,e3eaed+50,e3eaed+50,c8d7dc+100 */
 // background: #f2f5f6; /* Old browsers */
