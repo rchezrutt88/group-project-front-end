@@ -13,6 +13,7 @@ const entryActions = require('./entry-actions');
 const pageActions = require('./page-actions');
 const pageSwitch = require('./switch-pages');
 
+
 $(document).ready(() => {
   $('#sign-up').on('submit', function(e) {
     userActions.signUp(e, userActions.signIn, pageActions.pageUserIndex);
@@ -61,7 +62,6 @@ $(document).ready(() => {
     e.preventDefault();
     entryActions.getUpdateId(e);
     $('#text-editor').show();
-    console.log('here');
   });
-  $('#text-editor').on('click', '.patching-button', entryActions.updateEntry);
+  $('#text-editor').on('click', '.patching-button', entryActions.patchOrCreate);
 });

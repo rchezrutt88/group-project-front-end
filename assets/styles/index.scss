@@ -96,7 +96,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background: transparent;
 }
 .user-pages {
-  border: 2px solid black;
+  border: 1px solid black;
   display: inline-block;
   margin: 2px 2px 2px 2px;
 }
@@ -148,5 +148,9 @@ padding-bottom: 70px;
   margin-right: 250px;
   margin-top: 10px;
   text-align: left;
+  overflow: hidden;
+}
 
+.update-button {
+  margin-bottom: 2px;
 }
