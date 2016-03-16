@@ -46,11 +46,11 @@ $(document).ready(() => {
 
   $('#page2').hide();
   $('#page3').hide();
-  $('#create-entry').on('click', function(e) {
+  $('.create-entry').on('click', function(e) {
     e.preventDefault();
     $('#text-editor').show();
   });
-  $('#my-pages').on('click', function() {
+  $('.my-pages').on('click', function() {
     pageSwitch.page2from3();
   });
   // $('#text-editor-modal').on('submit', entryActions.createEntry);

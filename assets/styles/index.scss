@@ -29,10 +29,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   }
 }
 
-@media (min-width: 1200px) {
-  .col-lg-4 {
-      width: 50%;
-  }
+.page-entries {
+    width: 100%;
 }
 
 .container {
@@ -46,7 +44,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
-#sidebar {
+.sidebar {
   background-color: white;
   position: fixed; // keep fixed to window
   padding: 10px;
@@ -57,8 +55,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background: darkslategray;
   border-right: 2px solid black;
   transition: width ease 0.5s; // fluid transition when resizing
+  z-index: 100;
 }
-#sidebar-list {
+.sidebar-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -124,8 +123,6 @@ text-align: center;
 // background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 50%,#e3eaed 50%,#c8d7dc 100%); /* Chrome10-25,Safari5.1-6 */
 // background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 50%,#e3eaed 50%,#c8d7dc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
-
-
 }
 
 #container {
@@ -143,7 +140,10 @@ padding-bottom: 70px;
 // background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 50%,#e3eaed 50%,#c8d7dc 100%); /* Chrome10-25,Safari5.1-6 */
 // background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 50%,#e3eaed 50%,#c8d7dc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
 
-
-
+.entry-body {
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 10px;
 }
