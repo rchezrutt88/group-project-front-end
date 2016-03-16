@@ -12,7 +12,7 @@ let page1Handler = function () {
   $('#page2').hide();
 };
 
-let signUp = function(e) {
+let signUp = function(e, signIn, populatePages) {
   e.preventDefault();
   let formData = new FormData(e.target);
   $.ajax({
@@ -24,7 +24,7 @@ let signUp = function(e) {
   }).done(function(data) {
     console.log(data);
     $('#sign-up-modal').modal('hide');
-    signIn(e);
+    signIn(e, populatePages);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
