@@ -51,6 +51,37 @@ let createEntry = function(e) {
   });
 };
 
+
+  // display rating
+  // let displayEntries = function(response) {
+  //   console.log(response);
+  //   let entries = response.pages.entries;
+  //   console.log('here');
+  //   let entryListing = require('../handlebars/show-entries.handlebars');
+  //   $('.display-entries').empty();
+  //   $('.display-entries').prepend(entryListing({
+  //     entries
+  //   }));
+  // };
+  //
+  // let showEntries = function(e) {
+  //   e.preventDefault();
+  //   $.ajax({
+  //     headers: {
+  //       Authorization: 'Token token=' + myApp.user.token,
+  //     },
+  //     url: myApp.BASE_URL + '/pages/' + $(e.target).attr("data-page-id"),
+  //     method: 'GET',
+  //     dataType: 'json',
+  //   }).done(function(entries){
+  //     myApp.page = entries;
+  //     displayEntries(entries);
+  //   }).fail(function(jqxhr) {
+  //     console.log(jqxhr);
+  //   });
+  // };
+
 module.exports = {
-  createEntry
+  createEntry,
+  // showEntries
 };
