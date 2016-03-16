@@ -1,8 +1,20 @@
+ <script>
+Handlebars.registerHelper('reverse', function(collection, options ){
+	var result = '';
+	for( var i = collection.length - 1; i >= 0; i-- ){
+		result += options.fn( collection[i] );
+	}
+	return result;
+};
+
+</script> 
+
 {{#each entries}}
 <div class="col-xs-6 col-lg-4 page-entries" >
     <button type="button" class="close close-entry-button" data-dismiss="alert" aria-label="Close" entry-id="{{_id}}"><span entry-id="{{_id}}" aria-hidden="true">&times;</span></button>
     <div class="entry-body">
       {{{body}}}
+      {{createdAt}}
     </div>
 </div>
 {{/each}}

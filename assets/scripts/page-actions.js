@@ -61,9 +61,10 @@ let pageCreate = function(e) {
 
 let displayEntries = function(response) {
   let entries = response.pages._entries;
+  entries.reverse();
   let entryListing = require('../handlebars/show-entries.handlebars');
   $('.display-entries').empty();
-  $('.display-entries').prepend(entryListing({
+  $('.display-entries').append(entryListing({
     entries
   }));
 };
