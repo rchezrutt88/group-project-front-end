@@ -6,8 +6,8 @@ const page = require('./page-actions.js');
 
 tinymce.init({
 selector: 'textarea',
-height: 500,
-width: 600,
+height: '100%',
+width: '100%',
 theme: 'modern',
 plugins: [
   'advlist autolink lists link image charmap print preview hr anchor pagebreak',
