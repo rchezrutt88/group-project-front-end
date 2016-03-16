@@ -86,6 +86,8 @@ let signOut = function(e) {
     },
   }).done(function() {
     console.log('You have logged out');
+    myApp.user = undefined;
+    myApp.page = undefined;
     page1Handler();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
