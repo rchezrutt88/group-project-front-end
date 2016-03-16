@@ -11,7 +11,7 @@ let displayPages = function(response) {
   $('.pages-collection').html(pagesTemplate({pages}));
 };
 
-let pageIndex = function () {
+let pageIndex = function() {
   $.ajax({
     url: myApp.BASE_URL + '/pages',
     method: 'GET',
@@ -24,7 +24,7 @@ let pageIndex = function () {
   });
 };
 
-let pageUserIndex = function () {
+let pageUserIndex = function() {
   $.ajax({
     url: myApp.BASE_URL + '/pages/user/' + myApp.user._id,
     method: 'GET',
@@ -69,15 +69,26 @@ let displayEntries = function(response) {
 };
 
 let pageShow = function(e) {
-  e.preventDefault();
+
+  let pageId;
+
+  //if event is pased, get page assocaited with page click;
+  //if no event, assume page to get is current page.
+  if (e) {
+    e.preventDefault();
+    pageId = $(e.target).attr("data-page-id");
+  } else {
+    pageId = myApp.page.pages._id;
+  }
+
   $.ajax({
     headers: {
       Authorization: 'Token token=' + myApp.user.token,
     },
-    url: myApp.BASE_URL + '/pages/' + $(e.target).attr("data-page-id"),
+    url: myApp.BASE_URL + '/pages/' + pageId,
     method: 'GET',
     dataType: 'json',
-  }).done(function(page){
+  }).done(function(page) {
     myApp.page = page;
     console.log(page);
     pageSwitch.page3Handler();
