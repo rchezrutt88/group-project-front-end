@@ -69,6 +69,10 @@ let deleteEntry = function (event, showPage) {
   });
 };
 
+/* Methods for clearing/populating MCE*/
+let clearActiveEditor = function () {
+  tinyMCE.activeEditor.setContent('');
+};
 
   // display rating
   // let displayEntries = function(response) {
@@ -102,5 +106,6 @@ let deleteEntry = function (event, showPage) {
 module.exports = {
   createEntry,
   deleteEntry,
+  clearActiveEditor,
   // showEntries
 };
