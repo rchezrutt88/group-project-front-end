@@ -55,8 +55,8 @@ our reach goal is to have a profile picture and the ability to change the
 background color.
 
 ## Wireframes
-![Wireframe](./wireframeJPG)
-Format: ![Alt Text](url)
+
+![Wireframe](../wireframeJPG)
 
 ## ERD
 
