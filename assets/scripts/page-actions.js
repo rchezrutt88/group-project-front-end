@@ -113,7 +113,7 @@ let deletePage = function (event) {
     },
   }).done(function() {
     console.log("Successfully deleted page.");
-    pageIndex();
+    pageUserIndex();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
