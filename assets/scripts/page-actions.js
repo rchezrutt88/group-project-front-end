@@ -71,6 +71,25 @@ let displayEntries = function(response) {
   $('.display-entries').html(entryListing({entries}));
 };
 
+let displayHelper = function (array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++) {
+    newArray[i] = array[i].body;
+  }
+  return newArray;
+};
+
+let displayEntries = function(response) {
+  console.log(response.pages._entries);
+  console.log(displayHelper(response.pages._entries));
+  let entries = (displayHelper(response.pages._entries));
+  let entryListing = require('../handlebars/show-entries.handlebars');
+  $('.display-entries').empty();
+  $('.display-entries').prepend(entryListing({
+    entries
+  }));
+};
+
 let pageShow = function(e) {
   e.preventDefault();
   $.ajax({
@@ -100,6 +119,7 @@ let displayHelper = function (array) {
 
 //DELETE BUTTON
 let deletePage = function (event) {
+  console.log($(event.target).attr("data-delete-page"));
   event.preventDefault();
   $.ajax({
     url: myApp.BASE_URL + '/pages/' + $(event.target).attr("data-delete-page"),
