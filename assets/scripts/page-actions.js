@@ -63,7 +63,6 @@ let pageShow = function(e) {
   }).done(function(page){
     myApp.page = page;
     page3Handler();
-    console.log(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
   });
