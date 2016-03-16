@@ -28,7 +28,7 @@ let signUp = function(e) {
   });
 };
 
-let signIn = function(e) {
+let signIn = function(e, populatePages) {
   e.preventDefault();
   let formData = new FormData(e.target);
   $.ajax({
@@ -45,6 +45,7 @@ let signIn = function(e) {
     $('#change-password-button').show();
     console.log(data.user);
     myApp.user = data.user;
+    populatePages();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -96,5 +97,4 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  myApp,
 };

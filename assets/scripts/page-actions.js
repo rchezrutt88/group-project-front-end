@@ -29,7 +29,18 @@ let pageIndex = function () {
   });
 };
 
-
+let pageUserIndex = function () {
+  $.ajax({
+    url: myApp.BASE_URL + '/pages/user/' + myApp.user._id,
+    method: 'GET',
+    dataType: 'json',
+  }).done(function(pages) {
+    console.log(pages);
+    displayPages(pages);
+  }).fail(function(jqxhr) {
+    console.log(jqxhr);
+  });
+};
 
 let pageCreate = function(e) {
   e.preventDefault();
@@ -113,5 +124,6 @@ module.exports = {
   pageCreate,
   deletePage,
   pageIndex,
+  pageUserIndex,
   pageShow,
 };
