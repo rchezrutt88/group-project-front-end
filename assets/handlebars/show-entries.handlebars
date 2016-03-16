@@ -1,7 +1,7 @@
 {{#each entries}}
 <div class="col-xs-6 col-lg-4 page-entries" >
-    <button type="button" class="close close-page-button" data-dismiss="alert" aria-label="Close" data-delete-page="{{_id}}"><span data-delete-page="{{_id}}" aria-hidden="true">&times;</span></button>
+    <button type="button" class="close close-page-button" data-dismiss="alert" aria-label="Close" data-delete-page="{{entries._id}}"><span data-delete-page="{{_id}}" aria-hidden="true">&times;</span></button>
     <p>{{{body}}}</p><br>
-    <p><a class="btn btn-default update-entry" href="#" role="button" data-page-id="{{_id}}">Update Entry</a></p>
+    <p><button class="btn btn-default update-entry" data-target="#text-editor-modal" data-toggle="modal" href="#" role="button" data-update-page="{{entries._id}}">Update Entry</button></p>
 </div>
 {{/each}}
