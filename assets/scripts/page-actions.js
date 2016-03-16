@@ -2,6 +2,8 @@
 
 const myApp = require('./my-app');
 
+const entryActions = require('./entry-actions.js');
+
 let page3Handler = function () {
   $('#page3').show();
   $('#page2').hide();
@@ -62,10 +64,31 @@ let pageShow = function(e) {
     dataType: 'json',
   }).done(function(page){
     myApp.page = page;
+    console.log(page)
     page3Handler();
+    displayEntries(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
   });
+};
+
+let displayEntries = function(response) {
+  console.log(response.pages._entries);
+  console.log(displayHelper(response.pages._entries));
+  let entries = (displayHelper(response.pages._entries));
+  let entryListing = require('../handlebars/show-entries.handlebars');
+  $('.display-entries').empty();
+  $('.display-entries').prepend(entryListing({
+    entries
+  }));
+};
+
+let displayHelper = function (array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++) {
+    newArray[i] = array[i].body;
+  }
+  return newArray;
 };
 
 //DELETE BUTTON
