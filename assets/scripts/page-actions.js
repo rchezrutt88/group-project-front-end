@@ -63,6 +63,13 @@ let pageCreate = function(e) {
     console.error(jqxhr);
   });
 };
+let displayEntries = function(response) {
+  console.log(response.pages._entries);
+  console.log(displayHelper(response.pages._entries));
+  let entries = response.pages._entries;
+  let entryListing = require('../handlebars/show-entries.handlebars');
+  $('.display-entries').html(entryListing({entries}));
+};
 
 let pageShow = function(e) {
   e.preventDefault();
@@ -75,23 +82,12 @@ let pageShow = function(e) {
     dataType: 'json',
   }).done(function(page){
     myApp.page = page;
-    console.log(page)
+    console.log(page);
     page3Handler();
     displayEntries(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
   });
-};
-
-let displayEntries = function(response) {
-  console.log(response.pages._entries);
-  console.log(displayHelper(response.pages._entries));
-  let entries = (displayHelper(response.pages._entries));
-  let entryListing = require('../handlebars/show-entries.handlebars');
-  $('.display-entries').empty();
-  $('.display-entries').prepend(entryListing({
-    entries
-  }));
 };
 
 let displayHelper = function (array) {
