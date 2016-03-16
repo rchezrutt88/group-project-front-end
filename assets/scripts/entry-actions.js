@@ -121,11 +121,11 @@ let clearActiveEditor = function () {
   };
 
   let getUpdateId = function (event) {
+    event.preventDefault();
     let id = $(event.target).attr("data-update-page");
     $(".patching-button").attr("data-update-page", id);
   };
   let patchOrCreate = function () {
-    debugger;
       if (!$(".patching-button").attr("data-update-page")) {
         createEntry();
       } else {
