@@ -52,9 +52,10 @@ background color.
 
 ## Wireframes
 
-![Imgur](http://i.imgur.com/5mGunkC.jpg)
+![Wirefram](http://i.imgur.com/5mGunkC.jpg)
 
 ## ERD
+![ERD](http://i.imgur.com/6SazDqy.jpg) 
 
 ## Back End Repo
 [See Our Back End Here. It's WEB SCALE!©](https://github.com/Insert-Squad-Name/group-project-back-end)
