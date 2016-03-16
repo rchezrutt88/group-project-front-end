@@ -37,8 +37,9 @@ $(document).ready(() => {
     entryActions.createEntry(e, pageActions.pageShow);
   });
 
-  $('.pages-collection').on('click', '.user-pages', pageActions.pageShow);
+  $('.pages-collection').on('click', '.show-page', pageActions.pageShow);
   $('.pages-collection').on('click', '.close-page-button', pageActions.deletePage);
+  $('.display-entries').on('click', '.close-entry-button', pageActions.deleteEntry);
   $('#page2').hide();
   $('#page3').hide();
   $('#create-entry').on('click', function(e) {
