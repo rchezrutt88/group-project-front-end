@@ -56,7 +56,7 @@ background color.
 
 ## Wireframes
 
-![Wireframe](https://github.com/Insert-Squad-Name/group-project-front-end/blob/readme/wireframe.JPG)
+![Imgur](http://i.imgur.com/5mGunkC.jpg)
 
 ## ERD
 
