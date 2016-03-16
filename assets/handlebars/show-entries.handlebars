@@ -1,6 +1,8 @@
 {{#each entries}}
 <div class="col-xs-6 col-lg-4 page-entries" >
     <button type="button" class="close close-entry-button" data-dismiss="alert" aria-label="Close" entry-id="{{_id}}"><span entry-id="{{_id}}" aria-hidden="true">&times;</span></button>
-    {{{body}}}
+    <div class="entry-body">
+      {{{body}}}
+    </div>
 </div>
 {{/each}}
