@@ -3,17 +3,7 @@
 const myApp = require('./my-app');
 
 const entryActions = require('./entry-actions.js');
-
-let page3Handler = function () {
-  $('#page3').show();
-  $('#page2').hide();
-  $('#text-editor').hide();
-};
-
-let page2from3 = function() {
-  $('#page2').show();
-  $('#page3').hide();
-};
+const pageSwitch = require('./switch-pages');
 
 let displayPages = function(response) {
   let pages = response.pages;
@@ -90,7 +80,7 @@ let pageShow = function(e) {
   }).done(function(page){
     myApp.page = page;
     console.log(page);
-    page3Handler();
+    pageSwitch.page3Handler();
     displayEntries(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
@@ -122,5 +112,4 @@ module.exports = {
   pageIndex,
   pageUserIndex,
   pageShow,
-  page2from3,
 };
