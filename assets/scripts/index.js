@@ -11,6 +11,7 @@ const myApp = require('./my-app');
 const userActions = require('./user-actions.js');
 const entryActions = require('./entry-actions');
 const pageActions = require('./page-actions.js');
+const pageSwitch = require('./switch-pages');
 
 $(document).ready(() => {
   $('#sign-up').on('submit', function(e) {
@@ -35,6 +36,9 @@ $(document).ready(() => {
   $('#create-entry').on('click', function(e) {
     e.preventDefault();
     $('#text-editor').show();
+  });
+  $('#my-pages').on('click', function() {
+    pageSwitch.page2from3();
   });
   // $('#text-editor-modal').on('submit', entryActions.createEntry);
 });

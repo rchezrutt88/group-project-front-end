@@ -3,12 +3,7 @@
 const myApp = require('./my-app');
 
 const entryActions = require('./entry-actions.js');
-
-let page3Handler = function () {
-  $('#page3').show();
-  $('#page2').hide();
-  $('#text-editor').hide();
-};
+const pageSwitch = require('./switch-pages');
 
 let displayPages = function(response) {
   let pages = response.pages;
@@ -64,18 +59,8 @@ let pageCreate = function(e) {
   });
 };
 
-let displayHelper = function (array) {
-  let newArray = [];
-  for(let i = 0; i < array.length; i++) {
-    newArray[i] = array[i].body;
-  }
-  return newArray;
-};
-
 let displayEntries = function(response) {
-  console.log(response.pages._entries);
-  console.log(displayHelper(response.pages._entries));
-  let entries = (displayHelper(response.pages._entries));
+  let entries = response.pages._entries;
   let entryListing = require('../handlebars/show-entries.handlebars');
   $('.display-entries').empty();
   $('.display-entries').prepend(entryListing({
@@ -95,7 +80,7 @@ let pageShow = function(e) {
   }).done(function(page){
     myApp.page = page;
     console.log(page);
-    page3Handler();
+    pageSwitch.page3Handler();
     displayEntries(page);
   }).fail(function(jqxhr) {
     console.log(jqxhr);
@@ -114,7 +99,7 @@ let deletePage = function (event) {
     },
   }).done(function() {
     console.log("Successfully deleted page.");
-    pageUserIndex();
+    pageIndex();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
