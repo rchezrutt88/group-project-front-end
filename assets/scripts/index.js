@@ -27,8 +27,16 @@ $(document).ready(() => {
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
   $('#create-page-modal').on('submit', pageActions.pageCreate);
-  $('#entry-view').on('submit', entryActions.createEntry);
-  $('#blog-entry').on('submit', entryActions.createEntry);
+
+  //XXX why are there two listenrs here for createEntry?
+  $('#entry-view').on('submit', function(e) {
+    entryActions.createEntry(e, pageActions.pageShow);
+  });
+
+  $('#blog-entry').on('submit', function(e) {
+    entryActions.createEntry(e, pageActions.pageShow);
+  });
+
   $('.pages-collection').on('click', '.user-pages', pageActions.pageShow);
   $('.pages-collection').on('click', '.close-page-button', pageActions.deletePage);
   $('#page2').hide();

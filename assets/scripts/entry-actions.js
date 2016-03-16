@@ -28,7 +28,7 @@ content_css: [
 ]
 });
 
-let createEntry = function(e) {
+let createEntry = function(e, pageShow) {
   e.preventDefault();
   let body = tinyMCE.activeEditor.getContent();
   console.log(body);
@@ -43,6 +43,7 @@ let createEntry = function(e) {
       'body': body,
     },
   }).done(function(data) {
+    pageShow();
     console.log(data);
     $('#text-editor').hide();
     $('#text-editor-modal').modal('hide');
