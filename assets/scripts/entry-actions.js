@@ -4,6 +4,7 @@ const myApp = require('./my-app');
 
 const page = require('./page-actions.js');
 
+
 tinymce.init({
 selector: 'textarea',
 height: '100%',
@@ -115,6 +116,8 @@ let clearActiveEditor = function () {
       },
     }).done(function() {
       console.log("Updated Entry");
+      $('#text-editor-modal').modal('hide');
+      page.pageShow();
     }).fail(function(jqxhr) {
       console.error(jqxhr);
     });
