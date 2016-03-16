@@ -39,6 +39,7 @@ let signIn = function(e, populatePages) {
     console.log(data.user);
     myApp.user = data.user;
     populatePages();
+    updateUsernameLabel();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -85,6 +86,16 @@ let signOut = function(e) {
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
+};
+
+/* HELPER FUNCTIONS */
+
+let updateUsernameLabel = function() {
+  if(!myApp.user) {
+    $(".username").text("");
+  }else {
+    $(".username").text(myApp.user.email);
+  }
 };
 
 module.exports = {
