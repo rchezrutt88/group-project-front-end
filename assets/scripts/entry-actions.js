@@ -125,7 +125,9 @@ let clearActiveEditor = function () {
     let id = $(event.target).attr("data-update-page");
     $(".patching-button").attr("data-update-page", id);
   };
-  let patchOrCreate = function () {
+
+  let patchOrCreate = function (e) {
+      e.preventDefault();
       if (!$(".patching-button").attr("data-update-page")) {
         createEntry();
       } else {
