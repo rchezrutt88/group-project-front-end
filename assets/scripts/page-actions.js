@@ -10,6 +10,11 @@ let page3Handler = function () {
   $('#text-editor').hide();
 };
 
+let page2from3 = function() {
+  $('#page2').show();
+  $('#page3').hide();
+};
+
 let displayPages = function(response) {
   let pages = response.pages;
   let pagesTemplate = require('../handlebars/directory-pages.handlebars');
@@ -64,18 +69,8 @@ let pageCreate = function(e) {
   });
 };
 
-let displayHelper = function (array) {
-  let newArray = [];
-  for(let i = 0; i < array.length; i++) {
-    newArray[i] = array[i].body;
-  }
-  return newArray;
-};
-
 let displayEntries = function(response) {
-  console.log(response.pages._entries);
-  console.log(displayHelper(response.pages._entries));
-  let entries = (displayHelper(response.pages._entries));
+  let entries = response.pages._entries;
   let entryListing = require('../handlebars/show-entries.handlebars');
   $('.display-entries').empty();
   $('.display-entries').prepend(entryListing({
@@ -114,7 +109,7 @@ let deletePage = function (event) {
     },
   }).done(function() {
     console.log("Successfully deleted page.");
-    pageUserIndex();
+    pageIndex();
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
@@ -127,4 +122,5 @@ module.exports = {
   pageIndex,
   pageUserIndex,
   pageShow,
+  page2from3,
 };

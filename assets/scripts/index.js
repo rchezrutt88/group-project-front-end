@@ -36,5 +36,8 @@ $(document).ready(() => {
     e.preventDefault();
     $('#text-editor').show();
   });
+  $('#my-pages').on('click', function() {
+    pageActions.page2from3();
+  });
   // $('#text-editor-modal').on('submit', entryActions.createEntry);
 });
