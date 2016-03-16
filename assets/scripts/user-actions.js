@@ -23,6 +23,8 @@ let signUp = function(e) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    $('#sign-up-modal').modal('hide');
+    signIn(e);
   }).fail(function(jqxhr) {
     console.error(jqxhr);
   });
