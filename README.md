@@ -8,10 +8,7 @@ profile to start building multiple blogs. Each user will have their own home
 page where their past blogs will display on a dashboard.  Our website generator
 also allows users to customize and style their entries with ease.
 
-
 ## Visitor Interface
-
-A couple of paragraphs detailing the general approach you took.
 
 In our planning our team all agreed that we want our visitors to have a quality
 user experience. When visitors visit our site they are first greeted by a
@@ -29,8 +26,7 @@ a good user experience we have incorporated the TinyMCE text editor which allows
 our user to have fun with their content. Our application is able to record a lot
 of what TinyMCE generates, including font colors, emoticons, and a few others.
 We also have a home button which takes the user back to the profile page. As a
-group we achieved our goal in having a fully functioning blog web applicatioon.
-
+group we achieved our goal in having a fully functioning blog web application.
 
 ## Technologies:
 
@@ -61,7 +57,7 @@ background color.
 ## ERD
 
 ## Back End Repo
-[See Our Back End Here](https://github.com/Insert-Squad-Name/group-project-back-end)
+[See Our Back End Here. It's WEB SCALE!©](https://github.com/Insert-Squad-Name/group-project-back-end)
 
 ## Meet the Gentleman Who Created This Project:
 
