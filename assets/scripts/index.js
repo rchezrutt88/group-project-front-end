@@ -13,6 +13,7 @@ const entryActions = require('./entry-actions');
 const pageActions = require('./page-actions');
 const pageSwitch = require('./switch-pages');
 
+
 $(document).ready(() => {
   $('#sign-up').on('submit', function(e) {
     userActions.signUp(e, userActions.signIn, pageActions.pageUserIndex);
@@ -44,7 +45,7 @@ $(document).ready(() => {
   $('.pages-collection').on('click', '.close-page-button', pageActions.deletePage);
 
   $('.display-entries').on('click', '.close-entry-button', function(e) {
-    entryActions.deleteEntry(e, pageActions.pageShow)
+    entryActions.deleteEntry(e, pageActions.pageShow);
   });
 
   $('#page2').hide();
@@ -56,5 +57,11 @@ $(document).ready(() => {
   $('.my-pages').on('click', function() {
     pageSwitch.page2from3();
   });
-  // $('#text-editor-modal').on('submit', entryActions.createEntry);
+  $('.display-entries').on('click', '.update-button', function(e) {
+    console.log('Begin Updating');
+    e.preventDefault();
+    entryActions.getUpdateId(e);
+    $('#text-editor').show();
+  });
+  $('#text-editor').on('click', '.patching-button', entryActions.patchOrCreate);
 });

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const myApp = require('./my-app');
 
@@ -28,8 +28,8 @@ content_css: [
 ]
 });
 
-let createEntry = function(e, pageShow) {
-  e.preventDefault();
+let createEntry = function(event, pageShow) {
+  event.preventDefault();
   let body = tinyMCE.activeEditor.getContent();
   console.log(body);
   $.ajax({
@@ -103,9 +103,44 @@ let clearActiveEditor = function () {
   //   });
   // };
 
+  let updateEntry = function () {
+    debugger;
+    let body = tinyMCE.activeEditor.getContent();
+    $.ajax({
+      url: myApp.BASE_URL + '/entries/' + $('.patching-button').attr("data-update-page"),
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + myApp.user.token,
+      },
+      data: {
+        'body': body,
+      },
+    }).done(function() {
+      console.log("Updated Entry");
+      $(".patching-button").attr("data-update-page", "");
+    }).fail(function(jqxhr) {
+      console.error(jqxhr);
+    });
+  };
+
+  let getUpdateId = function (event) {
+    let id = $(event.target).attr("data-update-page");
+    $(".patching-button").attr("data-update-page", id);
+  };
+  let patchOrCreate = function (event) {
+      if (!$(".patching-button").attr("data-update-page")) {
+        createEntry();
+      } else {
+        updateEntry();
+      }
+    };
+
 module.exports = {
   createEntry,
   deleteEntry,
   clearActiveEditor,
   // showEntries
+  updateEntry,
+  getUpdateId,
+  patchOrCreate,
 };
