@@ -34,8 +34,8 @@ group we achieved our goal in having a fully functioning blog web applicatioon.
 
 ## Technologies:
 
-The overall look of the application formatted using bootstrap and the icons used
-on the sidebar are imported through Google Icons. The main engine for
+The overall look of the application is formatted using bootstrap and the icons
+used on the sidebar are imported through Google Icons. The main engine for
 interaction is operated by using Javascript and Jquery functions. As a team we
 used node to modularize the javascript to practice clean and semantic coding.
 Our blog pages and entries are both generated on the page using handlebars. We
@@ -53,6 +53,12 @@ stored by the user is safe so we had to make a filter which is still a work in
 progress.  We also want our site to be very customizable so in the future we
 our reach goal is to have a profile picture and the ability to change the
 background color.
+
+## Wireframes
+![Wireframe](./wireframeJPG)
+Format: ![Alt Text](url)
+
+## ERD
 
 
 
