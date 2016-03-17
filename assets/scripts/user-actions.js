@@ -14,9 +14,11 @@ let signUp = function(e, signIn, populatePages) {
     data: formData,
   }).done(function(data) {
     console.log(data);
+    $('#already').hide();
     $('#sign-up-modal').modal('hide');
     signIn(e, populatePages);
   }).fail(function(jqxhr) {
+    $('#already').show();
     console.error(jqxhr);
   });
 };
@@ -36,11 +38,13 @@ let signIn = function(e, populatePages) {
     pageSwitch.page2Handler();
     $('#sign-out-button').show();
     $('#change-password-button').show();
+    $('#fail').hide();
     console.log(data.user);
     myApp.user = data.user;
     populatePages();
     updateUsernameLabel();
   }).fail(function(jqxhr) {
+    $('#fail').show();
     console.error(jqxhr);
   });
 };
