@@ -59,11 +59,11 @@ $(document).ready(() => {
   $('.my-pages').on('click', function() {
     pageSwitch.page2from3();
   });
+
   $('.display-entries').on('click', '.update-button', function(e) {
     console.log('Begin Updating');
     e.preventDefault();
     entryActions.getUpdateId(e);
-    entryActions.clearActiveEditor();
     $('#text-editor').show();
   });
   // $('#text-editor').on('click', '.patching-button', entryActions.patchOrCreate);
