@@ -49,6 +49,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 }
 
+.fail {
+  color: red;
+  font-size: 20px;
+}
+
+.already {
+  color: red;
+  font-size: 20px;
+
+}
+
 .sidebar {
   background-color: white;
   position: fixed; // keep fixed to window

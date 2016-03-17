@@ -24,6 +24,9 @@ $(document).ready(() => {
     userActions.signIn(e, pageActions.pageUserIndex);
   });
 
+  $('#fail').hide();
+  $('#already').hide();
+
   $('#sign-out-button').on('click', userActions.signOut);
   $('.page2-sign-out').on('click', userActions.signOut);
   $('#change-password').on('submit', userActions.changePassword);
